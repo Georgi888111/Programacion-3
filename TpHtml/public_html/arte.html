@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+      <head>
+          <title>Ejercicio 2.2.</title>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
+      <h1 style="text-align: center;">Catálogo de arte</h1>
+      <h3 style="text-align: left;">Introduce los términos de búsqueda </h3>
+      <body>
+      <form>
+      
+      <div>
+        <div style="position: relative; float: left;">
+       <p> OBRA</p>
+       <p>
+        <label for="titulo">Titulo</label>
+        <input type="text" id="titulo" />
+      </p> 
+      <p>
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" />
+      </p> 
+      </div>
+
+     
+     
+
+    
+    <div style="position: relative; float: left; margin-left: 200px">
+       <p> TIPO</p> 
+       <p>
+       <input type="checkbox" name="tipo" value="esc"> Escultura<br>
+       <input type="checkbox" name="tipo" value="arq"> Arquitectura <br>
+       <input type="checkbox" name="tipo" value="pint"> Pintura <br>
+
+    </div>
+    <div style="position: relative;float: left; margin-left: 200px">
+      <p>DISPONIBILIDAD</p>  
+  
+    <p>
+    <input type="radio" name="disp" value="publ">Museo/Acceso Publico<br>
+     <input type="radio" name="disp" value="priv">Colección privada<br>
+
+    </p>
+     </div>
+    <div style="position: relative;float: right;margin-right: 170px">
+     <p>ESTILO</p> 
+     <p>
+      <select name="estilo">
+   <option value="clas">Clasico</option> 
+   <option value="abs">Abstracto</option> 
+   <option value="surr">Surrealista</option>
+   <option value="otro">Otro</option> 
+  
+</select>
+     </p>
+    </div>
+   
+ 
+    
+      
+    <div style="position: absolute; margin-top: 200px">
+       Haganos saber sus sugerencias
+       
+      <textarea name="comentarios" rows="4" cols="40">Me gustaría indicar</textarea>
+    </div>
+   
+     </div> 
+
+   
+      </form>
+       <p style="position: absolute;margin-top: 400px; margin-left: 550px"><button type="reset">Buscar</button></p>
+
+  </body>
+  </html>

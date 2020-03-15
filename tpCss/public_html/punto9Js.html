@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pizza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+   <form name="fomul">     
+  <select name="pizzas" id="pizzas">
+   <option value="Pizzas" selected>Pizzas</option> 
+  <option value="Jamon y queso">Jamon y queso</option> 
+  <option value="Muzzarella">Muzzarella</option>
+  <option value="Morrones">Morrones</option>
+  </select>
+       <input type="button" value="Precio" onClick="precioPizza()">    
+       
+   </form>
+  <script>
+    function precioPizza(){  
+    var selectPizza = document.getElementById("pizzas");
+    var pJyq = 10;
+    var pMuzz = 20;
+    var pMorr=15;
+    var opcion = selectPizza.options[selectPizza.selectedIndex].value;
+ 
+    if(opcion==="Muzzarella"){
+    	alert(pMuzz);
+    }else if(opcion==="Morrones"){
+    	alert(pMorr);
+    }else{
+        if(opcion==="Jamon y queso"){
+    	alert(pJyq);
+    }else{
+        alert("Seleccione un tipo de pizza");
+    }
+}
+}
+   
+</script>
+    </body>
+</html>

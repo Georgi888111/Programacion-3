@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>Ejercicio15</title>
+		<script type="text/javascript" src="js/codigo.js"></script>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+	</head>
+	<body>
+		<div id="InformaciÃ³n">
+			<h1>REGISTRO CLIENTE</h1>
+			<hr>			
+				<form>	
+					<div class="campos">
+						Nombre:
+						<input type="text" name = "nombre"  id="nombre"/>
+					</div>
+					
+					<div class="campos">
+						Primer Apellido:
+						<input type="text" name = "apell1" id="apell1"/>
+					</div>
+
+					<div class="campos">
+						Segundo Apellido:
+						<input type="text" name = "apell2" id="apell2"/>
+					</div>
+					
+					<div class="campos">
+						Telefono de contacto:
+						<input type="number" name = "tel" id="tel"/>
+					</div>
+
+					<div class="campos">
+						E-mail:
+						<input type="E-mail" name = "mail" id="mail"/>
+					</div>
+
+					<div class="campos">
+						Tipo de tarjeta:
+						<select id = "tipoTarj">
+							<option name="visa">Visa
+							<option name="visaDebito">Visa Debito
+							<option name="master">Master Card
+							<option name="maestro">Maestro
+						</select>
+						
+					</div>
+
+					<div class="campos">
+						Numero de tarjeta:
+						<input type="number" name = "numTarj" id="numTarj"/>
+					</div>
+
+					<div class="campos">
+						Nombre de usuario:
+						<input type="text" name = "usuario" id="usuario"/>
+					</div>
+
+					<div class="campos">
+						Clave:
+						<input type="password" name = "cont" id="cont"/>
+					</div>
+
+					<div class="campos">
+						Verificar clave:
+						<input type="password" name = "c_cont" id="c_cont"/>
+					</div>
+					
+					<hr>
+					<div style="text-align: center;  margin-top:6pt;">
+					<input type="button" value="Enviar" onClick="enviar()" style="display: inline;">
+					<input type="reset" value="Borrar"style="display: inline;">
+					</div>
+				</form>
+			
+			
+		</div>
+	</body>
+</html>

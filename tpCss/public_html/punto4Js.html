@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>Dni</title>
+
+
+</head>
+<body>
+    <script>
+        
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];    
+
+var dni=prompt('Ingrese su dni');
+var letra=prompt('Ingrese la letra');
+
+var result = dni%23;
+
+if(result<0||result>99999999){
+        alert('El número ingresado no es válido');
+}else{
+    var letraArray = letras[result];
+  }  
+
+
+
+if(letra===letraArray){
+   alert('El dni y la letra son correctos');
+}else{
+     alert("El dni y la letra no concuerdan");
+}
+</script>
+
+</body>
+</html>
+
+

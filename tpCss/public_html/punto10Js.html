@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mayor de edad</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <form name="fomul">     
+  <input type="radio" name="edad" value="menor"> Menor de 18<br>
+<input type="radio" name="edad" value="mayor"> Mayor de 18<br>
+<input type="button" value="Enviar eleccion" onClick="eleccion()">
+<script>
+    function eleccion(){
+    var selectEdad = document.getElementsByName("edad");
+    var opcion;
+     for(var i=0;i<selectEdad.length;i++)
+        {
+            if(selectEdad[i].checked)
+                opcion=selectEdad[i].value;
+        }
+    if(opcion=="menor"){
+        alert("No se permite el ingreso");
+    }else {
+         alert("Ingreso permitido");
+    }
+   
+}
+
+
+ 
+    
+            
+            </script>
+       
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table border="1" style="align: center; width: 60%;border-collapse: collapse;margin: 0 auto">
+
+            <tr>
+                <td><img src="C:\Users\Georgi\Downloads\auto.jpg"/><img src="C:\Users\Georgi\Downloads\moto.png"/><img src="C:\Users\Georgi\Downloads\camioneta.jpg"/></td>
+                <td style="color: green; font-size: 20px;font-family: Arial" >Administrar Vehiculo</td>
+            </tr>
+            <td style="font-family: Arial;font-size: 12px;"><b>Tipo vehiculo</b></td>
+            <td><select name="selectAuto" style="font-family: Arial;font-size: 12px" id="selecTipo" onchange="asignaEquipamiento(this.value)" >
+                    <option value="Auto" selected>Auto</option> 
+                    <option value="Moto" >Moto</option>
+                    <option value="Camion">Camion</option>
+                </select></td>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Marca</b></td>
+                <td><input type="text" id="marca"></td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Modelo</b></td>
+                <td><input type="text" id="modelo"></td>
+
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Dominio/Patente</b></td>
+                <td><input type="text" id="dominio"></td>
+
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Combustible</b></td>
+                <td><select name="selectCombustible" style="font-family: Arial;font-size: 12px" id="combustible">
+                        <option value="Diesel">Diesel</option> 
+                        <option value="GNC" selected>GNC</option>
+                        <option value="Nafta">Nafta</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Nuevo/Usado</b></td>
+                <td style="font-family: Arial;font-size: 12px"><input type="radio" name="nuevoUsa" value="Nuevo" id="nuevo"> Nuevo-0 KM<input type="radio" name="nuevoUsa" value="Usado">Usado</td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Equipamiento</b></td>
+                <td style="font-family: Arial;font-size: 12px"><input type="checkbox" name="equipamiento" value="aireAcon" id="aire"><label id="aireLabel">Aire acondicionado</label><br>
+                    <input type="checkbox" name="equipamiento" value="direcccion" id="direccion"><label id="direcLabel">Direccion Asistida</label><br>
+                    <input type="checkbox" name="equipamiento" value="alarma"><label id="alarLabel">Alarma</label><br>
+                    <input type="checkbox" name="equipamiento" value="frenos"><label id="frenoLabel">Frenos ABS</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial;font-size: 12px;"><b>Descripcion</b></td>
+                <td style="font-family: Arial;font-size: 12px"><textarea name="comentarios" id="descrip"></textarea></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td style="font-family: Arial;font-size: 12px"><button onclick="valida()">JavaScript</button></td>
+            </tr>
+            <tr>
+
+
+            </tr>
+
+        </table>
+
+        <label id="1"></label><br>
+        <label id="2"></label><br>
+        <label id="3"></label><br>
+        <label id="4"></label><br>
+        <label id="5"></label><br>
+        <label id="6"></label><br>
+        <label id="7"></label><br>
+        <label id="8"></label>
+
+
+
+        <script>
+
+            function valida() {
+                var marca = document.getElementById('marca');
+                var modelo = document.getElementById('modelo');
+                var dominio = document.getElementById('dominio');
+
+
+                if (marca.value == '' || modelo.value == '' || dominio.value == '') {
+                    alert("Debe llenar todos los campos");
+
+                }
+
+                var tipo = document.getElementById('selecTipo');
+                var pro = tipo.options[tipo.selectedIndex].value;
+                document.getElementById('1').innerText = pro;
+                document.getElementById('2').innerText = marca.value;
+                document.getElementById('3').innerText = modelo.value;
+                document.getElementById('4').innerText = dominio.value;
+                var combus = document.getElementById('combustible');
+                var selcom = combus.options[combus.selectedIndex].value;
+                document.getElementById('5').innerText = selcom;
+                var radioUso = document.getElementsByName("nuevoUsa");
+                for (var i = 0; i < radioUso.length; i++)
+                {
+                    if (radioUso[i].checked) {
+                        var resultado = radioUso[i].value;
+                        document.getElementById('6').innerText = resultado;
+                    }
+                }
+                
+               var equipa = document.getElementsByName("equipamiento");
+                 for (var i = 0; i < equipa.length; i++)
+                {
+                    if (equipa[i].checked) {
+                        var resultado2 = equipa[i].value;
+                        document.getElementById('7').innerText = resultado2;
+                    }
+                }
+               var descripcion = document.getElementById('descrip');
+               document.getElementById('8').innerText = descripcion.value;
+
+            }
+
+            function asignaEquipamiento(sel) {
+                if (sel == 'Moto')
+                {
+                    document.getElementById('direccion').style.opacity = "0";
+                    document.getElementById('aire').style.opacity = "0";
+                    document.getElementById('aireLabel').innerText = "";
+                    document.getElementById('direcLabel').innerText = "";
+
+                } else {
+                    document.getElementById('direccion').style.opacity = "1";
+                    document.getElementById('aire').style.opacity = "1";
+                    document.getElementById('aireLabel').innerText = "Aire acondicionado";
+                    document.getElementById('direcLabel').innerText = "Direccion Asistida";
+                }
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>
